@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/MyChapeter.iml" filepath="$PROJECT_DIR$/.idea/MyChapeter.iml" />
+      <module fileurl="file://D:\Java\MyChapeter\.idea\MyChapeter.iml" filepath="D:\Java\MyChapeter\.idea\MyChapeter.iml" />
       <module fileurl="file://$PROJECT_DIR$/sync/sync.iml" filepath="$PROJECT_DIR$/sync/sync.iml" />
+      <module fileurl="file://D:\Java\MyChapeter\sync\sync.iml" filepath="D:\Java\MyChapeter\sync\sync.iml" />
     </modules>
   </component>
 </project>

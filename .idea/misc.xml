@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="EclipseCodeFormatter">
+    <option name="defaultSettings" value="true" />
+    <option name="formatter" value="ECLIPSE" />
+    <option name="id" value="1493085325301" />
+    <option name="importOrderConfigFilePath" value="$USER_HOME$/Desktop/金融平台/Tuhu-codetemplates.xml" />
+    <option name="importOrderFromFile" value="true" />
+    <option name="name" value="default" />
+    <option name="pathToConfigFileJava" value="$USER_HOME$/Desktop/金融平台/Tuhu-Conventions.xml" />
+    <option name="selectedJavaProfile" value="Tuhu Conventions" />
+  </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>

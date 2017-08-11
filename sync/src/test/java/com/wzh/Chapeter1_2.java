@@ -3,7 +3,10 @@ package com.wzh;
 import org.junit.Assert;
 
 /**
- *
+ *中断（Interrupts）
+
+     中断是给线程的一个指示，告诉它应该停止正在做的事并去做其他事情。
+     一个线程究竟要怎么响应中断请求取决于程序员，不过让其终止是很普遍的做法。
  */
 
 public class Chapeter1_2 {
@@ -115,6 +118,13 @@ class PendingThread {
 
 
 /**
+ * 中断状态标记
+
+ 中断机制通过使用称为中断状态的内部标记来实现。调用Thread.interrupt()设置这个标记。当线程通过调用静态方法Thread.interrupted()检测中断时，中断状态会被清除。
+ 非静态的isInterrupted()方法被线程用来检测其他线程的中断状态，不改变中断状态标记。
+ */
+
+/**
  * 3. 使用 isInterrupted()方法判断中断状态
  * 可以在 Thread 对象上调用 isInterrupted()方法来检查任何线程的中断状态。
  * 这里需要注意：线程一旦被中断，isInterrupted()方法便会返回 true，
@@ -161,7 +171,7 @@ class InterruptReset{
 }
 
 /**
- *  5. join 方法用线程对象调用，
+ *  5. join() 方法用线程对象调用，
  *  如果在一个线程 A 中调用另一个线程 B 的 join 方法，线程 A 将会等待线程 B 执行完毕后再执行。
  */
 class JoinThread implements Runnable{
@@ -182,6 +192,5 @@ class JoinThread implements Runnable{
             e.printStackTrace();
         }
         System.out.println(Thread.currentThread().getName()+":"+System.currentTimeMillis());
-
     }
 }
