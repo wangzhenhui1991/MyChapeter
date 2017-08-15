@@ -1,6 +1,7 @@
 package com.wzh;
 
 /**
+ * 线程死锁
  * Created by wangzhenhui on 2017/8/11.
  */
 public class Chapeter1_4 {
