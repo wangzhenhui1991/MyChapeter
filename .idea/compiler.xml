@@ -7,11 +7,15 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="chapeter" />
+        <module name="eventbus" />
+        <module name="springBoot-session" />
         <module name="sync" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="chapeter" target="1.8" />
+      <module name="eventbus" target="1.8" />
+      <module name="springBoot-session" target="1.8" />
       <module name="sync" target="1.8" />
     </bytecodeTargetLevel>
   </component>

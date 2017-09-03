@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../MyChapeter/.idea/MyChapeter.iml" filepath="$PROJECT_DIR$/../../MyChapeter/.idea/MyChapeter.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/MyChapeter.iml" filepath="$PROJECT_DIR$/.idea/MyChapeter.iml" />
-      <module fileurl="file://D:\Java\MyChapeter\.idea\MyChapeter.iml" filepath="D:\Java\MyChapeter\.idea\MyChapeter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sync/src/main/demo.iml" filepath="$PROJECT_DIR$/sync/src/main/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eventbus/eventbus.iml" filepath="$PROJECT_DIR$/eventbus/eventbus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-session.iml" filepath="$PROJECT_DIR$/spring-session.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springBoot-session/springBoot-session.iml" filepath="$PROJECT_DIR$/springBoot-session/springBoot-session.iml" />
       <module fileurl="file://$PROJECT_DIR$/sync/sync.iml" filepath="$PROJECT_DIR$/sync/sync.iml" />
-      <module fileurl="file://D:\Java\MyChapeter\sync\sync.iml" filepath="D:\Java\MyChapeter\sync\sync.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../MyChapeter/sync/sync.iml" filepath="$PROJECT_DIR$/../../MyChapeter/sync/sync.iml" />
     </modules>
   </component>
 </project>
