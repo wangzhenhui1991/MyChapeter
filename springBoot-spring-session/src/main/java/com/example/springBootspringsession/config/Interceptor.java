@@ -1,4 +1,4 @@
-package com.wzh.springBootsession.config;
+package com.example.springBootspringsession.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Enumeration;
 
 @Component
 public class Interceptor implements HandlerInterceptor {
@@ -17,9 +18,12 @@ public class Interceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object o) throws Exception {
 
-
         SimpleDateFormat dateFormat = new SimpleDateFormat("hh:mm:ss");
         if(request.getSession()!=null){
+
+            if(request.getSession().isNew()){
+                request.getSession().setAttribute("userName","abc");
+            }
             String sessionSource = request.isRequestedSessionIdFromCookie()?"cookie":(request.isRequestedSessionIdFromURL()?"url":"unknon");
             boolean isValidSessionId = request.isRequestedSessionIdValid();
 
@@ -33,9 +37,9 @@ public class Interceptor implements HandlerInterceptor {
             //最大间隔懒惰性-是指客户端两次访问之间最大失效时间
 //            request.getSession().setMaxInactiveInterval(600);
 //            logger.info("aaa");
-
-            while(request.getSession().getAttributeNames().hasMoreElements()){
-                String sessionKey = request.getSession().getAttributeNames().nextElement();
+            Enumeration attributes = request.getSession().getAttributeNames();
+            while(attributes.hasMoreElements()){
+                String sessionKey = (String)attributes.nextElement();
                 logger.info("\n{},{}",sessionKey,request.getSession().getAttribute(sessionKey));
             }
         }
