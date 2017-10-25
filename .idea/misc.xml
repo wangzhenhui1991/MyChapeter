@@ -17,6 +17,7 @@
         <option value="$PROJECT_DIR$/eventbus/pom.xml" />
         <option value="$PROJECT_DIR$/springBoot-session/pom.xml" />
         <option value="$PROJECT_DIR$/springBoot-spring-session/pom.xml" />
+        <option value="$PROJECT_DIR$/kaptcha/pom.xml" />
       </list>
     </option>
   </component>

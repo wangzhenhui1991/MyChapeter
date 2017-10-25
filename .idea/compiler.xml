@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="chapeter" />
         <module name="eventbus" />
+        <module name="kaptcha" />
         <module name="springBoot-session" />
         <module name="springBoot-spring-session" />
         <module name="sync" />
@@ -16,6 +17,7 @@
     <bytecodeTargetLevel>
       <module name="chapeter" target="1.8" />
       <module name="eventbus" target="1.8" />
+      <module name="kaptcha" target="1.8" />
       <module name="springBoot-session" target="1.8" />
       <module name="springBoot-spring-session" target="1.8" />
       <module name="sync" target="1.8" />

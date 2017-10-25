@@ -6,6 +6,7 @@
       <module fileurl="file://D:\MyChapeter\.idea\MyChapeter.iml" filepath="D:\MyChapeter\.idea\MyChapeter.iml" />
       <module fileurl="file://D:\Java\MyChapeter\sync\src\main\demo.iml" filepath="D:\Java\MyChapeter\sync\src\main\demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/eventbus/eventbus.iml" filepath="$PROJECT_DIR$/eventbus/eventbus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kaptcha/kaptcha.iml" filepath="$PROJECT_DIR$/kaptcha/kaptcha.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-session.iml" filepath="$PROJECT_DIR$/spring-session.iml" />
       <module fileurl="file://$PROJECT_DIR$/springBoot-session/springBoot-session.iml" filepath="$PROJECT_DIR$/springBoot-session/springBoot-session.iml" />
       <module fileurl="file://$PROJECT_DIR$/springBoot-spring-session/springBoot-spring-session.iml" filepath="$PROJECT_DIR$/springBoot-spring-session/springBoot-spring-session.iml" />

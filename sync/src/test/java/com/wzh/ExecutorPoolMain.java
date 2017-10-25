@@ -23,8 +23,8 @@ public class ExecutorPoolMain {
             executorPool.waitUntilDone();
             System.out.println(System.currentTimeMillis() - startTime + "ms");
             try {
-                Assert.assertEquals(executorPool.getMap().get(1).get(), 14);
-                Assert.assertEquals(executorPool.getMap().get(2).get(), 40);
+                Assert.assertEquals(executorPool.getMap().get(1).get(), 18);
+                Assert.assertEquals(executorPool.getMap().get(2).get(), 54);
                 for (Map.Entry entry : executorPool.getMap().entrySet()) {
                     Integer key = (Integer) entry.getKey();
                     AtomicInteger value = (AtomicInteger) entry.getValue();
@@ -67,7 +67,7 @@ class ExecutorPool {
     public void put(Object data) throws InterruptedException {
         threadPoolExecutor.execute(() -> {
             try {
-                new statis().doSthWithNoSync((Integer) data, map);
+                new statis().doSthWithSync((Integer) data, map);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -146,6 +146,11 @@ class statis{
             }
         }
         map.get(group).incrementAndGet();
+        Thread.sleep(1l);
+        map.get(group).incrementAndGet();
+        Thread.sleep(1l);
+        map.get(group).incrementAndGet();
+        Thread.sleep(1l);
     }
 
     /**
@@ -163,6 +168,8 @@ class statis{
         }else{
             map.put(group,new AtomicInteger(data));
         }
+        map.get(group).incrementAndGet();
+        map.get(group).incrementAndGet();
         map.get(group).incrementAndGet();
     }
 
