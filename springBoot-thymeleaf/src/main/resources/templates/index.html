@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head lang="en">
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"></link>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.16/b-1.4.2/datatables.min.css"/>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title></title>
+</head>
+<body>
+<h1 th:text="${host}">Hello World</h1>
+<h2 th:text="${host}">Hello World</h2>
+<h3 th:text="${host}">Hello World</h3>
+<h4 th:text="${host}">Hello World</h4>
+<p>CurrentTime is: <span th:text="${currentTime}">13 February 2011</span></p>
+<!--这个是HTML5标准语法-->
+<p data-th-text="${host}">Welcome to our grocery store!</p>
+<button id="addSeq" type="button" class="btn btn-default" aria-label="Left Align" data-toggle="modal" data-target="#exampleModal">
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+</button>
+<table id= "seqTable" class="table table-hover table-bordered" cellspacing="0">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>id</th>
+        <th>SeqName</th>
+        <th>start</th>
+        <th>end</th>
+        <th>tenant</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="seq,iterStat:${seqs}">
+        <th scope="row" th:text="${seq.id}">1</th>
+        <td th:text="${seq.id}">id</td>
+        <td th:text="${seq.seqName}">seqName</td>
+        <td th:text="${seq.start}">start</td>
+        <td th:text="${seq.end}">end</td>
+        <td th:text="${seq.tenant}">start</td>
+    </tr>
+    </tbody>
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Create</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="create-seq-name" class="form-control-label">SeqName</label>
+                        <input type="text" class="form-control" id="create-seq-name"></input>
+                    </div>
+                    <div class="form-group">
+                        <label for="create-seq-min" class="form-control-label">min</label>
+                        <input type="text" class="form-control" id="create-seq-min"></input>
+                    </div>
+                    <div class="form-group">
+                        <label for="create-seq-max" class="form-control-label">max</label>
+                        <input type="text" class="form-control" id="create-seq-max"></input>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="create-seq">Create</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.16/b-1.4.2/datatables.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        var t = $('#seqTable').DataTable();
+
+        //添加创建Seq-button
+        new $.fn.dataTable.Buttons( t, {
+            buttons: [
+                {
+                    text: '+',
+                    action: function ( e, dt, node, config ) {
+
+                    }
+                }
+            ]
+        });
+        //添加
+        t.buttons().container().appendTo( $('.col-sm-6:eq(0)', t.table().container()));
+
+        $("#create-seq").click(function(){
+            var seqName = $("#create-seq-name").val();
+            $.ajax({
+                type : "POST",
+                url : "/addseq",
+                headers:{
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                data:  JSON.stringify({
+                    'id':'100',
+                    'seqName':'ttt',
+                    'start':11,
+                    'end': 11,
+                    'tenant': 11,
+                }),
+                success : function(data) {
+                    if(null != data){
+                        t.row.add( [data.id,data.id,data.seqName,data.start,data.end,data.tenant]).draw( true );
+                    }else {
+                        alert("添加失败!!")
+                    }
+                },
+                error: function(data) {
+                    alert("网络异常,请刷新后重试");
+                }
+            });
+        });
+    } );
+
+</script>
+</body>
+</html>

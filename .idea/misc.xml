@@ -3,12 +3,7 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/sync/pom.xml" />
-        <option value="$PROJECT_DIR$/eventbus/pom.xml" />
-        <option value="$PROJECT_DIR$/springBoot-session/pom.xml" />
-        <option value="$PROJECT_DIR$/springBoot-spring-session/pom.xml" />
-        <option value="$PROJECT_DIR$/kaptcha/pom.xml" />
-        <option value="$PROJECT_DIR$/sequence/pom.xml" />
+        <option value="$PROJECT_DIR$/springBoot-thymeleaf/pom.xml" />
       </list>
     </option>
   </component>
