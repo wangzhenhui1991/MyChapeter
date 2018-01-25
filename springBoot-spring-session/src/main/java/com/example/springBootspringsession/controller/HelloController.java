@@ -4,6 +4,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * Created by wangzhenhui on 2017/9/5.
  */
@@ -11,8 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
 
     @RequestMapping(value = "/index",method = RequestMethod.GET)
-    public String printHello(){
-        return "hello Spring boot";
+    public String printHello(HttpServletRequest request){
+        Object value = request.getSession().getAttribute("date");
+        return "hello Spring boot"+value.toString();
     }
 
 }

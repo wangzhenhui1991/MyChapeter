@@ -21,14 +21,12 @@ public class Interceptor implements HandlerInterceptor {
         SimpleDateFormat dateFormat = new SimpleDateFormat("hh:mm:ss");
         if(request.getSession()!=null){
 
-            if(request.getSession().isNew()){
-                request.getSession().setAttribute("userName","abc");
-            }
             String sessionSource = request.isRequestedSessionIdFromCookie()?"cookie":(request.isRequestedSessionIdFromURL()?"url":"unknon");
             boolean isValidSessionId = request.isRequestedSessionIdValid();
 
-            logger.info("'\nId:{}-from {} - isValid:{}\nCreateTime:{}\nLastAccessTime:{}"
+            logger.info("'\nId:{}-is {}-from {} - isValid:{}\nCreateTime:{}\nLastAccessTime:{}"
                     ,request.getSession().getId()
+                    ,request.getSession().isNew()?"new":"not new"
                     ,sessionSource
                     ,isValidSessionId
                     ,dateFormat.format(new Date(request.getSession().getCreationTime()))
@@ -38,22 +36,24 @@ public class Interceptor implements HandlerInterceptor {
 //            request.getSession().setMaxInactiveInterval(600);
 //            logger.info("aaa");
             Enumeration attributes = request.getSession().getAttributeNames();
+            request.getSession().setAttribute("date",request.getSession().getCreationTime());
             while(attributes.hasMoreElements()){
                 String sessionKey = (String)attributes.nextElement();
                 logger.info("\n{},{}",sessionKey,request.getSession().getAttribute(sessionKey));
             }
         }
-
+        logger.info("URI:{}",request.getRequestURI());
+        logger.info("jsid:{}",request.getParameterMap().get("jsessionid"));
         return true;
     }
 
     @Override
     public void postHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, ModelAndView modelAndView) throws Exception {
-
+//        logger.info("postHandle:{}",httpServletRequest.getSession().getId());
     }
 
     @Override
     public void afterCompletion(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) throws Exception {
-
+//        logger.info("afterCompletion:{}",httpServletRequest.getSession().getId());
     }
 }
