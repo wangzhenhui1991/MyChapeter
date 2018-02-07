@@ -1,4 +1,4 @@
-package com.wzh.springBootsession;
+package com.wzh.springboot.session;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

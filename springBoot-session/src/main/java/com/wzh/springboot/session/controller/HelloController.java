@@ -1,4 +1,4 @@
-package com.wzh.springBootsession.controller;
+package com.wzh.springboot.session.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

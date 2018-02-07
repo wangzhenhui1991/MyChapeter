@@ -82,10 +82,13 @@
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/plug-ins/1.10.16/pagination/input.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.16/b-1.4.2/datatables.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
-        var t = $('#seqTable').DataTable();
+        var t = $('#seqTable').DataTable({
+            'pagingType': 'input'
+        });
 
         //添加创建Seq-button
         new $.fn.dataTable.Buttons( t, {

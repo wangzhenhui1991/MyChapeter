@@ -47,6 +47,7 @@ public class RedisHttpSessionConfig {
 //        return new LettuceConnectionFactory();
 //    }
 
+
     @Bean
     public CustomHttpSessionStrategy httpSessionStrategy(){
         return new CustomHttpSessionStrategy();

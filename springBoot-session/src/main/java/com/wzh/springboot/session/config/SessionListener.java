@@ -1,4 +1,4 @@
-package com.wzh.springBootsession.config;
+package com.wzh.springboot.session.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

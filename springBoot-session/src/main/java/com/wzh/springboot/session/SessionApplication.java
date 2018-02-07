@@ -1,12 +1,15 @@
-package com.wzh.springBootsession;
+package com.wzh.springboot.session;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ *
+ */
 @SpringBootApplication
-public class SpringBootSessionApplication {
+public class SessionApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootSessionApplication.class, args);
+		SpringApplication.run(SessionApplication.class, args);
 	}
 }

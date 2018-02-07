@@ -1,4 +1,4 @@
-package com.wzh.springBootsession.config;
+package com.wzh.springboot.session.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;

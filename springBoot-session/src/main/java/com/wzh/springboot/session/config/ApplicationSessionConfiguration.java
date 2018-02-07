@@ -1,4 +1,4 @@
-package com.wzh.springBootsession.config;
+package com.wzh.springboot.session.config;
 
 import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;
 import org.springframework.context.annotation.Bean;
